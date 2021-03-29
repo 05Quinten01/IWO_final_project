@@ -1,0 +1,33 @@
+Total occurences of tweets with fissa or fuif in the Netherlands:
+s4530896@karora:/net/corpora/twitter2/Tweets/2019/07$ zless *.out.gz | /net/corpora/twitter2/tools/tweet2tab -i text user.location | grep -i -w -e 'fissa' -e 'fuif' | wc -l
+1228
+
+
+Western provinces fuif:
+s4530896@karora:/net/corpora/twitter2/Tweets/2019/07$ zless *.out.gz | /net/corpora/twitter2/tools/tweet2tab -i text user.location | grep -i -w 'fuif' | grep -i -e 'Utrecht' 
+-e 'Noord-Holland' -e 'Zuid-Holland' | wc -l
+4
+
+Western provinces fissa:
+s4530896@karora:/net/corpora/twitter2/Tweets/2019/07$ zless *.out.gz | /net/corpora/twitter2/tools/tweet2tab -i text user.location | grep -i -w 'fissa' | grep -i -e 'Utrecht' 
+-e 'Noord-Holland' -e 'Zuid-Holland' | wc -l
+10
+
+
+Rest of the Netherlands fuif:
+s4530896@karora:/net/corpora/twitter2/Tweets/2019/07$ zless *.out.gz | /net/corpora/twitter2/tools/tweet2tab -i text user.location | grep -i -w 'fuif' | grep -i -e 'Friesland' 
+-e 'Groningen' -e 'Drenthe' | wc -l
+3
+s4530896@karora:/net/corpora/twitter2/Tweets/2019/07$ zless *.out.gz | /net/corpora/twitter2/tools/tweet2tab -i text user.location | grep -i -w 'fuif' | grep -i -e 'Flevoland'
+ -e 'Gelderland' -e 'Overijssel' -e
+'Zeeland' -e 'Noord-Brabant' -e 'Limburg' | wc -l
+2
+
+
+Rest of the Netherlands fissa:
+s4530896@karora:/net/corpora/twitter2/Tweets/2019/07$ zless *.out.gz | /net/corpora/twitter2/tools/tweet2tab -i text user.location | grep -i -w 'fissa' | grep -i -e 'Friesland' 
+-e 'Groningen' -e 'Drenthe' | wc -l
+1
+s4530896@karora:/net/corpora/twitter2/Tweets/2019/07$ zless *.out.gz | /net/corpora/twitter2/tools/tweet2tab -i text user.location | grep -i -w 'fissa' | grep -i -e 'Flevoland' 
+-e 'Gelderland' -e 'Overijssel' -e 'Zeeland' -e 'Noord-Brabant' -e 'Limburg' | wc -l
+4
