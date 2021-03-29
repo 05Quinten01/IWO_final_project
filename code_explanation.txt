@@ -1,0 +1,31 @@
+Versions of Ubuntu we used : Ubuntu 16.04.7 LTS (GNU/Linux 4.15.0-99-generic x86_64)
+
+
+With cd you 'lock' into an directory, so you do not have to put that into your command all the time.
+	cd /net/corpora/twitter2/Tweets/2019/06
+	cd /net/corpora/twitter2/Tweets/2019/07
+
+zless *.out.gz : takes all the files from the directory
+
+/net/corpora/twitter2/tools/tweet2tab -i text user.location : enters the directory with all the built-in options, we make use of text and user.location
+	text : takes the entire tweet
+	user.location : takes the location of the tweet
+
+grep -i -w 'word' : picks tweets containing 'word' 
+	-i : case-insensitivity
+	-w : ensures complete words are picked
+	'word' : we used fissa and fuif here
+
+grep -i -e 'province' : picks tweets containing 'province'
+	-i : case-insensitivity
+	-e : extends the grep, so multiple provinces can be run on
+
+	our used commands: 
+	grep -i -e 'Utrecht' -e 'Noord-Holland' -e 'Zuid-Holland'
+	grep -i -e 'Friesland' -e 'Groningen' -e 'Drenthe'
+	grep -i -e 'Flevoland' -e 'Gelderland' -e 'Overijssel' -e 'Zeeland' -e 'Noord-Brabant' -e 'Limburg'
+	(the last two combined are the rest of the Netherlands, could not all be in one command)
+
+wc -l : counts all the hits
+	-l : counts the lines, here the amount of tweets
+	
